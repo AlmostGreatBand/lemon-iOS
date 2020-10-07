@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368D252DD82C00AA85EE /* LemonApp.swift */; };
+		79C63690252DD82C00AA85EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368F252DD82C00AA85EE /* ContentView.swift */; };
+		79C63692252DD82E00AA85EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C63691252DD82E00AA85EE /* Assets.xcassets */; };
+		79C63695252DD82E00AA85EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C63694252DD82E00AA85EE /* Preview Assets.xcassets */; };
+		79C63697252DD82E00AA85EE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C63696252DD82E00AA85EE /* Persistence.swift */; };
+		79C6369A252DD82F00AA85EE /* Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C63698252DD82F00AA85EE /* Lemon.xcdatamodeld */; };
+		79C636A5252DD82F00AA85EE /* LemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636A4252DD82F00AA85EE /* LemonTests.swift */; };
+		79C636B0252DD82F00AA85EE /* LemonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636AF252DD82F00AA85EE /* LemonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79C636A1252DD82F00AA85EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79C63682252DD82C00AA85EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C63689252DD82C00AA85EE;
+			remoteInfo = Lemon;
+		};
+		79C636AC252DD82F00AA85EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79C63682252DD82C00AA85EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C63689252DD82C00AA85EE;
+			remoteInfo = Lemon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79C6368A252DD82C00AA85EE /* Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C6368D252DD82C00AA85EE /* LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonApp.swift; sourceTree = "<group>"; };
+		79C6368F252DD82C00AA85EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		79C63691252DD82E00AA85EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79C63694252DD82E00AA85EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79C63696252DD82E00AA85EE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		79C63699252DD82F00AA85EE /* Lemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lemon.xcdatamodel; sourceTree = "<group>"; };
+		79C6369B252DD82F00AA85EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79C636A0252DD82F00AA85EE /* LemonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C636A4252DD82F00AA85EE /* LemonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonTests.swift; sourceTree = "<group>"; };
+		79C636A6252DD82F00AA85EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79C636AB252DD82F00AA85EE /* LemonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C636AF252DD82F00AA85EE /* LemonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonUITests.swift; sourceTree = "<group>"; };
+		79C636B1252DD82F00AA85EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79C63687252DD82C00AA85EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C6369D252DD82F00AA85EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C636A8252DD82F00AA85EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79C63681252DD82C00AA85EE = {
+			isa = PBXGroup;
+			children = (
+				79C6368C252DD82C00AA85EE /* Lemon */,
+				79C636A3252DD82F00AA85EE /* LemonTests */,
+				79C636AE252DD82F00AA85EE /* LemonUITests */,
+				79C6368B252DD82C00AA85EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79C6368B252DD82C00AA85EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79C6368A252DD82C00AA85EE /* Lemon.app */,
+				79C636A0252DD82F00AA85EE /* LemonTests.xctest */,
+				79C636AB252DD82F00AA85EE /* LemonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79C6368C252DD82C00AA85EE /* Lemon */ = {
+			isa = PBXGroup;
+			children = (
+				79C6368D252DD82C00AA85EE /* LemonApp.swift */,
+				79C6368F252DD82C00AA85EE /* ContentView.swift */,
+				79C63691252DD82E00AA85EE /* Assets.xcassets */,
+				79C63696252DD82E00AA85EE /* Persistence.swift */,
+				79C6369B252DD82F00AA85EE /* Info.plist */,
+				79C63698252DD82F00AA85EE /* Lemon.xcdatamodeld */,
+				79C63693252DD82E00AA85EE /* Preview Content */,
+			);
+			path = Lemon;
+			sourceTree = "<group>";
+		};
+		79C63693252DD82E00AA85EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				79C63694252DD82E00AA85EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79C636A3252DD82F00AA85EE /* LemonTests */ = {
+			isa = PBXGroup;
+			children = (
+				79C636A4252DD82F00AA85EE /* LemonTests.swift */,
+				79C636A6252DD82F00AA85EE /* Info.plist */,
+			);
+			path = LemonTests;
+			sourceTree = "<group>";
+		};
+		79C636AE252DD82F00AA85EE /* LemonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79C636AF252DD82F00AA85EE /* LemonUITests.swift */,
+				79C636B1252DD82F00AA85EE /* Info.plist */,
+			);
+			path = LemonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79C63689252DD82C00AA85EE /* Lemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C636B4252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "Lemon" */;
+			buildPhases = (
+				79C63686252DD82C00AA85EE /* Sources */,
+				79C63687252DD82C00AA85EE /* Frameworks */,
+				79C63688252DD82C00AA85EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lemon;
+			productName = Lemon;
+			productReference = 79C6368A252DD82C00AA85EE /* Lemon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79C6369F252DD82F00AA85EE /* LemonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C636B7252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "LemonTests" */;
+			buildPhases = (
+				79C6369C252DD82F00AA85EE /* Sources */,
+				79C6369D252DD82F00AA85EE /* Frameworks */,
+				79C6369E252DD82F00AA85EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79C636A2252DD82F00AA85EE /* PBXTargetDependency */,
+			);
+			name = LemonTests;
+			productName = LemonTests;
+			productReference = 79C636A0252DD82F00AA85EE /* LemonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79C636AA252DD82F00AA85EE /* LemonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C636BA252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "LemonUITests" */;
+			buildPhases = (
+				79C636A7252DD82F00AA85EE /* Sources */,
+				79C636A8252DD82F00AA85EE /* Frameworks */,
+				79C636A9252DD82F00AA85EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79C636AD252DD82F00AA85EE /* PBXTargetDependency */,
+			);
+			name = LemonUITests;
+			productName = LemonUITests;
+			productReference = 79C636AB252DD82F00AA85EE /* LemonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79C63682252DD82C00AA85EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					79C63689252DD82C00AA85EE = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					79C6369F252DD82F00AA85EE = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 79C63689252DD82C00AA85EE;
+					};
+					79C636AA252DD82F00AA85EE = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 79C63689252DD82C00AA85EE;
+					};
+				};
+			};
+			buildConfigurationList = 79C63685252DD82C00AA85EE /* Build configuration list for PBXProject "Lemon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79C63681252DD82C00AA85EE;
+			productRefGroup = 79C6368B252DD82C00AA85EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79C63689252DD82C00AA85EE /* Lemon */,
+				79C6369F252DD82F00AA85EE /* LemonTests */,
+				79C636AA252DD82F00AA85EE /* LemonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79C63688252DD82C00AA85EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C63695252DD82E00AA85EE /* Preview Assets.xcassets in Resources */,
+				79C63692252DD82E00AA85EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C6369E252DD82F00AA85EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C636A9252DD82F00AA85EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79C63686252DD82C00AA85EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C63697252DD82E00AA85EE /* Persistence.swift in Sources */,
+				79C6369A252DD82F00AA85EE /* Lemon.xcdatamodeld in Sources */,
+				79C63690252DD82C00AA85EE /* ContentView.swift in Sources */,
+				79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C6369C252DD82F00AA85EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C636A5252DD82F00AA85EE /* LemonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C636A7252DD82F00AA85EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C636B0252DD82F00AA85EE /* LemonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79C636A2252DD82F00AA85EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79C63689252DD82C00AA85EE /* Lemon */;
+			targetProxy = 79C636A1252DD82F00AA85EE /* PBXContainerItemProxy */;
+		};
+		79C636AD252DD82F00AA85EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79C63689252DD82C00AA85EE /* Lemon */;
+			targetProxy = 79C636AC252DD82F00AA85EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		79C636B2252DD82F00AA85EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79C636B3252DD82F00AA85EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79C636B5252DD82F00AA85EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Lemon/Preview Content\"";
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Lemon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.Lemon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79C636B6252DD82F00AA85EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Lemon/Preview Content\"";
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Lemon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.Lemon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79C636B8252DD82F00AA85EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				INFOPLIST_FILE = LemonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.LemonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lemon.app/Lemon";
+			};
+			name = Debug;
+		};
+		79C636B9252DD82F00AA85EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				INFOPLIST_FILE = LemonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.LemonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lemon.app/Lemon";
+			};
+			name = Release;
+		};
+		79C636BB252DD82F00AA85EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				INFOPLIST_FILE = LemonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.LemonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lemon;
+			};
+			name = Debug;
+		};
+		79C636BC252DD82F00AA85EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G66XPV3HVM;
+				INFOPLIST_FILE = LemonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlmostGreatBand.LemonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lemon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79C63685252DD82C00AA85EE /* Build configuration list for PBXProject "Lemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C636B2252DD82F00AA85EE /* Debug */,
+				79C636B3252DD82F00AA85EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79C636B4252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "Lemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C636B5252DD82F00AA85EE /* Debug */,
+				79C636B6252DD82F00AA85EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79C636B7252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "LemonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C636B8252DD82F00AA85EE /* Debug */,
+				79C636B9252DD82F00AA85EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79C636BA252DD82F00AA85EE /* Build configuration list for PBXNativeTarget "LemonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C636BB252DD82F00AA85EE /* Debug */,
+				79C636BC252DD82F00AA85EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79C63698252DD82F00AA85EE /* Lemon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79C63699252DD82F00AA85EE /* Lemon.xcdatamodel */,
+			);
+			currentVersion = 79C63699252DD82F00AA85EE /* Lemon.xcdatamodel */;
+			path = Lemon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 79C63682252DD82C00AA85EE /* Project object */;
+}
