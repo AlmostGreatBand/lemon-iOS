@@ -17,6 +17,7 @@
 		79C6369A252DD82F00AA85EE /* Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C63698252DD82F00AA85EE /* Lemon.xcdatamodeld */; };
 		79C636A5252DD82F00AA85EE /* LemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636A4252DD82F00AA85EE /* LemonTests.swift */; };
 		79C636B0252DD82F00AA85EE /* LemonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636AF252DD82F00AA85EE /* LemonUITests.swift */; };
+		79DBB7FB2534CBFF00263F6A /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBB7FA2534CBFF00263F6A /* TransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		79C636AB252DD82F00AA85EE /* LemonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C636AF252DD82F00AA85EE /* LemonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonUITests.swift; sourceTree = "<group>"; };
 		79C636B1252DD82F00AA85EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79DBB7FA2534CBFF00263F6A /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				79ACD0CA25305AC700D8E186 /* CardView.swift */,
 				79435EEB2531968C00B18353 /* PagerView.swift */,
+				79DBB7FA2534CBFF00263F6A /* TransactionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				79C6369A252DD82F00AA85EE /* Lemon.xcdatamodeld in Sources */,
 				79C63690252DD82C00AA85EE /* ContentView.swift in Sources */,
 				79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */,
+				79DBB7FB2534CBFF00263F6A /* TransactionView.swift in Sources */,
 				79ACD0CB25305AC700D8E186 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
