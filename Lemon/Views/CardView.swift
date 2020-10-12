@@ -70,8 +70,6 @@ struct CardView: View {
                         Spacer()
                     }
                     .font(Font.system(size:25, weight: .bold, design: .rounded))
-                    .minimumScaleFactor(0.05)
-                    .lineLimit(1)
                     
                     Spacer()
                     
@@ -83,19 +81,19 @@ struct CardView: View {
                         }
                         Text("\(String(card.number))")
                     }
-                    .font(.system(size: 25, weight: .light))
+                    .font(.system(size: 22))
                     .padding(.bottom, 5)
                     
                     // Bank and type
                     HStack {
-                        Text(card.bank)
-                            .bold()
-                        Text(card.type)
-                        
+                        Text("\(card.bank)  \(card.type)")
                         Spacer()
                     }
-                    .font(.system(size: 18))
+                    .font(.system(size: 18, weight: .medium))
                 }
+                .foregroundColor(Color.black)
+                .minimumScaleFactor(0.05)
+                .lineLimit(1)
                 .padding(30)
             }
             .mask(RoundedRectangle(cornerRadius: radius))
@@ -117,7 +115,7 @@ struct CardView_Previews: PreviewProvider {
 // Temporary here. Replace to Model later
 // Fields can change becase DB is not finished yet.
 
-struct Card {
+struct Card: Hashable {
     var id: Int
     var bank: String
     var number: Int

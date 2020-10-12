@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79435EEC2531968C00B18353 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79435EEB2531968C00B18353 /* PagerView.swift */; };
 		79ACD0CB25305AC700D8E186 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACD0CA25305AC700D8E186 /* CardView.swift */; };
 		79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368D252DD82C00AA85EE /* LemonApp.swift */; };
 		79C63690252DD82C00AA85EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368F252DD82C00AA85EE /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79435EEB2531968C00B18353 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		79ACD0CA25305AC700D8E186 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		79C6368A252DD82C00AA85EE /* Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C6368D252DD82C00AA85EE /* LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonApp.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				79ACD0CA25305AC700D8E186 /* CardView.swift */,
+				79435EEB2531968C00B18353 /* PagerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79435EEC2531968C00B18353 /* PagerView.swift in Sources */,
 				79C63697252DD82E00AA85EE /* Persistence.swift in Sources */,
 				79C6369A252DD82F00AA85EE /* Lemon.xcdatamodeld in Sources */,
 				79C63690252DD82C00AA85EE /* ContentView.swift in Sources */,
