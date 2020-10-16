@@ -10,7 +10,10 @@ import CoreData
 
 struct ContentView: View {
     var body: some View {
-        Text("Placeholder")
+        NavigationView {
+            Home()
+                .navigationBarHidden(true)
+        }
     }
 }
 

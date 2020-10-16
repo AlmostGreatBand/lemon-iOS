@@ -14,10 +14,12 @@ struct CardView: View {
     var card: Card
     
     // Card corners' radius
-    var radius = CGFloat(25)
+    var radius = CGFloat(18)
     
     // Card's aspect ratio
     var aspectRatio = CGFloat(1.6)
+    
+    @Environment(\.colorScheme) var colorScheme
     
     // MARK: - Views
     var body: some View {
@@ -29,12 +31,14 @@ struct CardView: View {
         
         ZStack {
             
-            // Shadow
-            RoundedRectangle(cornerRadius: radius)
-                .fill(Color.white.opacity(1))
-                .aspectRatio(aspectRatio, contentMode: .fit)
-                .padding(30)
-                .shadow(color: shadowColor, radius: 20, y: 25)
+            if colorScheme != .dark {
+                // Shadow
+                RoundedRectangle(cornerRadius: radius)
+                    .fill(Color.white.opacity(1))
+                    .aspectRatio(aspectRatio, contentMode: .fit)
+                    .padding(30)
+                    .shadow(color: shadowColor, radius: 20, y: 15)
+            }
             
             GeometryReader{ geometry in
                 
@@ -61,15 +65,11 @@ struct CardView: View {
                 .fill(Color.white.opacity(0.1))
                 
                 // Card info
-                VStack {
+                VStack(alignment: .leading) {
                     
                     // Currency and balance
-                    HStack {
-                        Text("\(card.currency)  \(Double(card.balance / 100), specifier: "%.2f")")
-                        
-                        Spacer()
-                    }
-                    .font(Font.system(size:25, weight: .bold, design: .rounded))
+                    Text("\(card.currency)  \(Double(card.balance / 100), specifier: "%.2f")")
+                        .font(Font.system(size:25, weight: .bold, design: .rounded))
                     
                     Spacer()
                     
@@ -82,19 +82,19 @@ struct CardView: View {
                         Text("\(String(card.number))")
                     }
                     .font(.system(size: 22))
-                    .padding(.bottom, 5)
+                    
+                    Spacer()
                     
                     // Bank and type
-                    HStack {
-                        Text("\(card.bank)  \(card.type)")
-                        Spacer()
-                    }
-                    .font(.system(size: 18, weight: .medium))
+                    Text(card.bank)
+                        .bold()
+                    
+                    Text(card.type)
                 }
                 .foregroundColor(Color.black)
                 .minimumScaleFactor(0.05)
                 .lineLimit(1)
-                .padding(30)
+                .padding(20)
             }
             .mask(RoundedRectangle(cornerRadius: radius))
             .aspectRatio(aspectRatio, contentMode: .fit)
