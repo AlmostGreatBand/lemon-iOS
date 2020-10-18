@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct TransactionRow: View {
-    var transaction: TransactionObj
+    var transaction: Transactions
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.colorScheme) var colorScheme
+    
+    var cardsRequest: FetchRequest<Card>
+    var cards: FetchedResults<Card> { cardsRequest.wrappedValue }
+
+    init(transaction: Transactions) {
+        self.transaction = transaction
+        
+        cardsRequest = FetchRequest<Card>(
+            entity: Card.entity(),
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "id == %@", String(transaction.cardID))
+        )
+    }
     
     var body: some View {
         HStack {
-            IconView(type: transaction.type)
-            Text(transaction.name)
-                .minimumScaleFactor(0.05)
+            IconView(type: transaction.transactionType)
+            Text(transaction.name.isEmpty ? transaction.transactionType.rawValue : transaction.name)
                 .lineLimit(3)
             
             Spacer()
@@ -22,10 +37,11 @@ struct TransactionRow: View {
             HStack(spacing: 5) {
                 Spacer()
                 Text("\(transaction.amount > 0 ? "+" : "")\(Double(transaction.amount / 100), specifier: "%.2f")")
-                Text(transaction.card.currency)
+                Text(cards.first?.currency ?? "")
             }
             .foregroundColor(transaction.amount > 0 ? Color.green : Color.red)
-            .frame(maxWidth: .infinity)
+            .frame(minWidth: 70)
+            .fixedSize(horizontal: true, vertical: false)
             .lineLimit(1)
         }
         .padding(.horizontal)
@@ -46,26 +62,6 @@ struct IconView: View {
             .background(icon.color)
             .cornerRadius(8)
     }
-}
-
-struct TransactionRow_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionRow(transaction: TransactionObj(card: cards[0], amount: -100000, name: "Buy new iPhone", date: Date(), type: .shopping))
-    }
-}
-
-enum TransactionType {
-    case donation, entertainment, food, health,
-         shopping, transportation, utilities, income
-}
-
-struct TransactionObj: Identifiable {
-    var id = UUID()
-    var card: Card
-    var amount: Int
-    var name: String
-    var date: Date
-    var type: TransactionType
 }
 
 fileprivate struct Icon {

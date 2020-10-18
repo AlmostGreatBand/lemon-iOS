@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79435EEC2531968C00B18353 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79435EEB2531968C00B18353 /* PagerView.swift */; };
-		79ACD0CB25305AC700D8E186 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ACD0CA25305AC700D8E186 /* CardView.swift */; };
+		79AF238B253C78DC00784F6F /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF2389253C78DC00784F6F /* Transactions+CoreDataClass.swift */; };
+		79AF238C253C78DC00784F6F /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF238A253C78DC00784F6F /* Transactions+CoreDataProperties.swift */; };
 		79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368D252DD82C00AA85EE /* LemonApp.swift */; };
 		79C63690252DD82C00AA85EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368F252DD82C00AA85EE /* ContentView.swift */; };
 		79C63692252DD82E00AA85EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C63691252DD82E00AA85EE /* Assets.xcassets */; };
@@ -16,9 +16,15 @@
 		79C63697252DD82E00AA85EE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C63696252DD82E00AA85EE /* Persistence.swift */; };
 		79C636A5252DD82F00AA85EE /* LemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636A4252DD82F00AA85EE /* LemonTests.swift */; };
 		79C636B0252DD82F00AA85EE /* LemonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C636AF252DD82F00AA85EE /* LemonUITests.swift */; };
-		79DBB7FB2534CBFF00263F6A /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBB7FA2534CBFF00263F6A /* TransactionRow.swift */; };
-		79F39DA52538D26A002D58BE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F39DA42538D26A002D58BE /* Home.swift */; };
-		79FC0E222539E04400B35BC8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FC0E212539E04400B35BC8 /* Header.swift */; };
+		79E1FC26253B9F2D00457960 /* Lemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79E1FC24253B9F2D00457960 /* Lemon.xcdatamodeld */; };
+		79FBE48A253B82B100BE5059 /* CardsPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE484253B82B100BE5059 /* CardsPager.swift */; };
+		79FBE48B253B82B100BE5059 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE485253B82B100BE5059 /* TransactionRow.swift */; };
+		79FBE48C253B82B100BE5059 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE486253B82B100BE5059 /* CardView.swift */; };
+		79FBE48D253B82B100BE5059 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE487253B82B100BE5059 /* Header.swift */; };
+		79FBE48E253B82B100BE5059 /* TransactionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE488253B82B100BE5059 /* TransactionsList.swift */; };
+		79FBE48F253B82B100BE5059 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE489253B82B100BE5059 /* Home.swift */; };
+		79FBE49A253B82DE00BE5059 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE494253B82DE00BE5059 /* Card+CoreDataClass.swift */; };
+		79FBE49E253B82DE00BE5059 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE499253B82DE00BE5059 /* Card+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		79435EEB2531968C00B18353 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
-		79ACD0CA25305AC700D8E186 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		79AF2389253C78DC00784F6F /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		79AF238A253C78DC00784F6F /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		79C6368A252DD82C00AA85EE /* Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C6368D252DD82C00AA85EE /* LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonApp.swift; sourceTree = "<group>"; };
 		79C6368F252DD82C00AA85EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,9 +60,15 @@
 		79C636AB252DD82F00AA85EE /* LemonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C636AF252DD82F00AA85EE /* LemonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonUITests.swift; sourceTree = "<group>"; };
 		79C636B1252DD82F00AA85EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79DBB7FA2534CBFF00263F6A /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
-		79F39DA42538D26A002D58BE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		79FC0E212539E04400B35BC8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		79E1FC25253B9F2D00457960 /* Lemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lemon.xcdatamodel; sourceTree = "<group>"; };
+		79FBE484253B82B100BE5059 /* CardsPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPager.swift; sourceTree = "<group>"; };
+		79FBE485253B82B100BE5059 /* TransactionRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		79FBE486253B82B100BE5059 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		79FBE487253B82B100BE5059 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		79FBE488253B82B100BE5059 /* TransactionsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsList.swift; sourceTree = "<group>"; };
+		79FBE489253B82B100BE5059 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		79FBE494253B82DE00BE5059 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		79FBE499253B82DE00BE5059 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +99,12 @@
 		79ACD0C925305AA300D8E186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				79ACD0CA25305AC700D8E186 /* CardView.swift */,
-				79435EEB2531968C00B18353 /* PagerView.swift */,
-				79DBB7FA2534CBFF00263F6A /* TransactionRow.swift */,
-				79F39DA42538D26A002D58BE /* Home.swift */,
-				79FC0E212539E04400B35BC8 /* Header.swift */,
+				79FBE484253B82B100BE5059 /* CardsPager.swift */,
+				79FBE486253B82B100BE5059 /* CardView.swift */,
+				79FBE487253B82B100BE5059 /* Header.swift */,
+				79FBE489253B82B100BE5059 /* Home.swift */,
+				79FBE485253B82B100BE5059 /* TransactionRow.swift */,
+				79FBE488253B82B100BE5059 /* TransactionsList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 		79C6368C252DD82C00AA85EE /* Lemon */ = {
 			isa = PBXGroup;
 			children = (
+				79FBE493253B82CD00BE5059 /* Model */,
 				79ACD0C925305AA300D8E186 /* Views */,
 				79C6368D252DD82C00AA85EE /* LemonApp.swift */,
 				79C6368F252DD82C00AA85EE /* ContentView.swift */,
@@ -154,6 +168,18 @@
 				79C636B1252DD82F00AA85EE /* Info.plist */,
 			);
 			path = LemonUITests;
+			sourceTree = "<group>";
+		};
+		79FBE493253B82CD00BE5059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79FBE494253B82DE00BE5059 /* Card+CoreDataClass.swift */,
+				79FBE499253B82DE00BE5059 /* Card+CoreDataProperties.swift */,
+				79AF2389253C78DC00784F6F /* Transactions+CoreDataClass.swift */,
+				79AF238A253C78DC00784F6F /* Transactions+CoreDataProperties.swift */,
+				79E1FC24253B9F2D00457960 /* Lemon.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,14 +311,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79435EEC2531968C00B18353 /* PagerView.swift in Sources */,
-				79FC0E222539E04400B35BC8 /* Header.swift in Sources */,
+				79FBE49E253B82DE00BE5059 /* Card+CoreDataProperties.swift in Sources */,
+				79FBE48B253B82B100BE5059 /* TransactionRow.swift in Sources */,
+				79FBE49A253B82DE00BE5059 /* Card+CoreDataClass.swift in Sources */,
 				79C63697252DD82E00AA85EE /* Persistence.swift in Sources */,
-				79F39DA52538D26A002D58BE /* Home.swift in Sources */,
 				79C63690252DD82C00AA85EE /* ContentView.swift in Sources */,
+				79E1FC26253B9F2D00457960 /* Lemon.xcdatamodeld in Sources */,
+				79FBE48D253B82B100BE5059 /* Header.swift in Sources */,
+				79AF238B253C78DC00784F6F /* Transactions+CoreDataClass.swift in Sources */,
+				79FBE48F253B82B100BE5059 /* Home.swift in Sources */,
 				79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */,
-				79DBB7FB2534CBFF00263F6A /* TransactionRow.swift in Sources */,
-				79ACD0CB25305AC700D8E186 /* CardView.swift in Sources */,
+				79FBE48C253B82B100BE5059 /* CardView.swift in Sources */,
+				79FBE48E253B82B100BE5059 /* TransactionsList.swift in Sources */,
+				79AF238C253C78DC00784F6F /* Transactions+CoreDataProperties.swift in Sources */,
+				79FBE48A253B82B100BE5059 /* CardsPager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +644,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79E1FC24253B9F2D00457960 /* Lemon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79E1FC25253B9F2D00457960 /* Lemon.xcdatamodel */,
+			);
+			currentVersion = 79E1FC25253B9F2D00457960 /* Lemon.xcdatamodel */;
+			path = Lemon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 79C63682252DD82C00AA85EE /* Project object */;
 }

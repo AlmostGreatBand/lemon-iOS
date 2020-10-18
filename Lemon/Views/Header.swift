@@ -18,7 +18,7 @@ struct Header: View {
                 
                 Spacer()
                 
-                Text("\(card.balance) \(card.currency)")
+                Text("\(Double(card.balance / 100), specifier: "%.2f") \(card.currency)")
                     .font(.system(size: 20, weight: .regular))
             }
             
@@ -30,11 +30,5 @@ struct Header: View {
         .padding(.bottom, 15)
         .frame(height: 100)
         .background(BlurBG().edgesIgnoringSafeArea(.top))
-    }
-}
-
-struct Header_Previews: PreviewProvider {
-    static var previews: some View {
-        Header(card: cards[0]).background(Color.blue)
     }
 }

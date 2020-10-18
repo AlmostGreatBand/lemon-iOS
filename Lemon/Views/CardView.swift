@@ -102,27 +102,4 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(
-            card: Card(id: 0, bank: "monobank", number: 1234, type: "black", balance: 100000000000, currency: "UAH", color: "Sapphire")
-        )
-        .padding()
-    }
-}
-
-// MARK: - Temp
-// Temporary here. Replace to Model later
-// Fields can change becase DB is not finished yet.
-
-struct Card: Hashable {
-    var id: Int
-    var bank: String
-    var number: Int
-    var type: String
-    var balance: Int
-    var currency: String
-    var color: String
-}
-
 var cardColors = ["Peach", "Lime", "Sapphire"]
