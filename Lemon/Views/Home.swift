@@ -19,52 +19,57 @@ struct Home: View {
     @Environment(\.colorScheme) var colorScheme
 
     @FetchRequest(
+        entity: Card.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Card.id, ascending: true)],
         animation: .default)
     
     private var cards: FetchedResults<Card>
     
     var body: some View {
-        
-        ZStack(alignment: .top) {
-            ScrollView(showsIndicators: false) {
-                VStack {
-                    
-                    // Cards pager
-                    GeometryReader { geometry in
+        if (cards.isEmpty) {
+            // TODO: implement card adding
+            Text("Wow, such empty")
+        } else {
+            ZStack(alignment: .top) {
+                ScrollView(showsIndicators: false) {
+                    VStack {
                         
-                        let topSafeOffset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0)
-                        
-                        let y = geometry.frame(in: .global).minY
-                        
-                        CardsPager(currentIndex: $currentCardIndex)
-                            .padding(.horizontal, 10)
-                            .onReceive(self.time) { _ in
-                                if -y > topSafeOffset + 50 {
-                                    withAnimation{
-                                        self.showStickyHeader = true
-                                    }
-                                } else {
-                                    withAnimation{
-                                        self.showStickyHeader = false
+                        // Cards pager
+                        GeometryReader { geometry in
+                            
+                            let topSafeOffset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0)
+                            
+                            let y = geometry.frame(in: .global).minY
+                            
+                            CardsPager(cards: cards, currentIndex: $currentCardIndex)
+                                .padding(.horizontal, 10)
+                                .onReceive(self.time) { _ in
+                                    if -y > topSafeOffset + 50 {
+                                        withAnimation{
+                                            self.showStickyHeader = true
+                                        }
+                                    } else {
+                                        withAnimation{
+                                            self.showStickyHeader = false
+                                        }
                                     }
                                 }
-                            }
+                        }
+                        .frame(height: maxCardHeight)
+                        
+                        TransactionsList(cardID: Int(cards[currentCardIndex].id))
+
                     }
-                    .frame(height: maxCardHeight)
-                    
-                    TransactionsList(cardID: Int(cards[currentCardIndex].id))
+                }.zIndex(0)
 
+                if self.showStickyHeader {
+                    Header(card: cards[currentCardIndex])
+                        .zIndex(1)
                 }
-            }.zIndex(0)
-
-            if self.showStickyHeader {
-                Header(card: cards[currentCardIndex])
-                    .zIndex(1)
             }
+            .background(Color(colorScheme == .dark ? UIColor.systemBackground : UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+            )
         }
-        .background(Color(colorScheme == .dark ? UIColor.systemBackground : UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
-        )
     }
 }
 

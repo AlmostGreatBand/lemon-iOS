@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardsPager: View {
 
+    var cards: FetchedResults<Card>
+    
     var pageCount: Int {
         return cards.count
     }
@@ -17,14 +19,6 @@ struct CardsPager: View {
     @Binding var currentIndex: Int
     // translation of current page relatively to it's default position
     @State private var translation = CGFloat.zero
-
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        entity: Card.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Card.id, ascending: true)],
-        animation: .default
-    ) var cards: FetchedResults<Card>
 
     // func to get right offset
     func getNeededOffset(width: CGFloat) -> CGFloat {
@@ -72,8 +66,8 @@ struct CardsPager: View {
     }
 }
 
-struct CardsPager_Previews: PreviewProvider {
-    static var previews: some View {
-        CardsPager(currentIndex: .constant(0)).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct CardsPager_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardsPager(currentIndex: .constant(0))
+//    }
+//}
