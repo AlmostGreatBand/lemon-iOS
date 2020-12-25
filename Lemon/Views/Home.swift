@@ -32,15 +32,15 @@ struct Home: View {
         } else {
             ZStack(alignment: .top) {
                 ScrollView(showsIndicators: false) {
-                    VStack {
-                        
+                    VStack(alignment: .leading) {
+
                         // Cards pager
                         GeometryReader { geometry in
-                            
+
                             let topSafeOffset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0)
-                            
+
                             let y = geometry.frame(in: .global).minY
-                            
+
                             CardsPager(cards: cards, currentIndex: $currentCardIndex)
                                 .padding(.horizontal, 10)
                                 .onReceive(self.time) { _ in
@@ -56,8 +56,10 @@ struct Home: View {
                                 }
                         }
                         .frame(height: maxCardHeight)
-                        
-                        TransactionsList(cardID: Int(cards[currentCardIndex].id))
+
+                        TransactionsList(predicate: Transactions.predicate(cardID: cards[currentCardIndex].id, with: [], searchText: ""), sortDescriptor: TransactionsSort(sortType: SortType.date, sortOrder: SortOrder.ascending).sortDescriptor)
+//                        TransactionsList(cardID: Int(cards[currentCardIndex].id))
+
 
                     }
                 }.zIndex(0)
@@ -69,6 +71,8 @@ struct Home: View {
             }
             .background(Color(colorScheme == .dark ? UIColor.systemBackground : UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
             )
+            
+//            Wallet().animation(nil)
         }
     }
 }

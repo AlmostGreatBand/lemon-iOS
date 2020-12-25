@@ -14,33 +14,33 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for i in 0..<50 {
-//            let transaction = Transactions(context: viewContext)
-//            
-//            let type = TransactionType.allCases.randomElement()!
-//            let lowerBound: Int64 = type == .income ? 0 : -10000000
-//            let upperBound: Int64 = type == .income ? 10000000 : 0
-//            
-//            transaction.amount = Int64.random(in: lowerBound...upperBound)
-//            transaction.cardID = Int64.random(in: 0...5)
-//            transaction.date = Date(timeIntervalSinceNow: .random(in: -1000000...0))
-//            transaction.id = UUID()
-//            transaction.name = ""
-//            transaction.type = type.rawValue
-//            
-//            if i <= 5 {
-//                let banks = ["PrivatBank", "Monobank"]
-//                let types = ["Gold", "Black", "Platinum", "Payments"]
-//                let currencies = ["UAH", "USD", "RUB", "CAD", "BYN"]
-//                
-//                let card = Card(context: viewContext)
-//                card.id = Int64(i)
-//                card.bank = banks.randomElement() ?? "PrivatBank"
-//                card.number = Int16.random(in: 0...9999)
-//                card.type = types.randomElement() ?? "Gold"
-//                card.balance = Int64(Int.random(in: 100...200000))
-//                card.currency = currencies.randomElement() ?? "UAH"
-//                card.color = cardColors.randomElement() ?? "Lime"
-//            }
+            let transaction = Transactions(context: viewContext)
+            
+            let type = TransactionType.allCases.randomElement()!
+            let lowerBound: Int64 = type == .income ? 0 : -10000000
+            let upperBound: Int64 = type == .income ? 10000000 : 0
+            
+            transaction.amount = Int64.random(in: lowerBound...upperBound)
+            transaction.cardID = Int64.random(in: 0...5)
+            transaction.date = Date(timeIntervalSinceNow: .random(in: -1000000...0))
+            transaction.id = UUID()
+            transaction.name = ""
+            transaction.type = type.rawValue
+            
+            if i <= 5 {
+                let banks = ["PrivatBank", "Monobank"]
+                let types = ["Gold", "Black", "Platinum", "Payments"]
+                let currencies = ["UAH", "USD", "RUB", "CAD", "BYN"]
+                
+                let card = Card(context: viewContext)
+                card.id = Int64(i)
+                card.bank = banks.randomElement() ?? "PrivatBank"
+                card.number = Int16.random(in: 1000...9999)
+                card.type = types.randomElement() ?? "Gold"
+                card.balance = Int64(Int.random(in: 100...200000))
+                card.currency = currencies.randomElement() ?? "UAH"
+                card.color = cardColors.randomElement() ?? "Lime"
+            }
         }
         do {
             try viewContext.save()

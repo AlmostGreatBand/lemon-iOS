@@ -1,35 +1,39 @@
 //
-//  TransactionList.swift
+//  TransactionsList.swift
 //  Lemon
 //
-//  Created by Vsevolod Pavlovskyi on 17.10.2020.
+//  Created by Vsevolod Pavlovskyi on 01.11.2020.
 //
 
 import SwiftUI
 import CoreData
 
 struct TransactionsList: View {
-    @Environment(\.managedObjectContext) private var viewContext
+
+    @Environment(\.managedObjectContext) private var context
     @Environment(\.colorScheme) var colorScheme
-    
-    var cardID: Int
-    
-    var transactionsRequest: FetchRequest<Transactions>
-    var transactions: FetchedResults<Transactions> { transactionsRequest.wrappedValue }
-    
-    init(cardID: Int) {
-        self.cardID = cardID
-        
-        transactionsRequest = FetchRequest<Transactions>(
-            entity: Transactions.entity(),
-            sortDescriptors: [],
-            predicate: NSPredicate(format: "cardID == %@", String(cardID))
-        )
+
+    @FetchRequest(
+        entity: Transactions.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Transactions.date, ascending: false)
+        ]
+    )
+    private var result: FetchedResults<Transactions>
+
+    init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor) {
+        let fetchRequest = NSFetchRequest<Transactions>(entityName: Transactions.entity().name ?? "Transactions")
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        if let predicate = predicate {
+            fetchRequest.predicate = predicate
+        }
+        _result = FetchRequest(fetchRequest: fetchRequest)
     }
     
     func getDates() -> [DateComponents] {
         var dates = [DateComponents]()
-        transactions.forEach { transaction in
+        result.forEach { transaction in
             let components = transaction.date.get(.day, .month, .year)
             if !dates.contains(components) {
                 dates.append(components)
@@ -43,51 +47,94 @@ struct TransactionsList: View {
     }
     
     func getTransactionsByDate(date: DateComponents) -> [Transactions] {
-        return transactions.filter { transaction in
+        return result.filter { transaction in
             let components = transaction.date.get(.day, .month, .year)
             return components == date
         }
     }
-    
+
     var body: some View {
-        // Transactions
-        VStack(alignment: .leading) {
+        if (result.isEmpty) {
+            Text("Empty")
+        } else {
+            VStack(alignment: .leading) {
 
-            ForEach(getDates(), id: \.self) { date in
-                HStack(spacing: 5) {
-                    Text("\(date.day!)")
-                    Text("\(DateFormatter().monthSymbols[date.month! - 1])")
-                }
-                .font(.headline)
-                .padding([.leading, .top])
-                .padding(.bottom, 5)
-
-                let transactions = getTransactionsByDate(date: date)
-
-                VStack {
-                    ForEach(transactions) { transaction in
-                        TransactionRow(transaction: transaction)
-                            .frame(height: 45)
-                            .padding(.bottom, 1)
-                        Divider()
+                ForEach(getDates(), id: \.self) { date in
+                    HStack(spacing: 5) {
+                        Text("\(date.day!)")
+                        Text("\(DateFormatter().monthSymbols[date.month! - 1])")
                     }
+                    .font(.headline)
+                    .padding([.leading, .top])
+                    .padding(.bottom, 5)
+
+                    let transactions = getTransactionsByDate(date: date)
+
+                    VStack {
+                        ForEach(transactions) { transaction in
+                            TransactionRow(transaction: transaction)
+                                .frame(height: 45)
+                                .padding(.bottom, 1)
+                            Divider()
+                        }
+                    }
+                    .padding(.top, 10)
+                    .padding(.bottom, -1)
+                    .background(Color(colorScheme == .dark ? UIColor.secondarySystemBackground : UIColor.systemBackground))
+                    .cornerRadius(18)
                 }
-                .padding(.top, 10)
-                .padding(.bottom, -1)
-                .background(Color(colorScheme == .dark ? UIColor.secondarySystemBackground : UIColor.systemBackground))
-                .cornerRadius(18)
+                .animation(nil)
             }
-            .animation(nil)
+            .edgesIgnoringSafeArea(.bottom)
+            .padding(10)
         }
-        .edgesIgnoringSafeArea(.bottom)
-        .padding(10)
-        .transition(.opacity)
-        .animation(.spring())
+    }
+
+    private func onDelete(with indexSet: IndexSet) {
+        // TODO: Implement Delete
     }
 }
 
-struct TransactionList_Previews: PreviewProvider {
+struct TestPredicate_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionsList(cardID: 0).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        TransactionsList(predicate: Transactions.predicate(cardID: nil, with: [], searchText: ""), sortDescriptor: TransactionsSort(sortType: SortType.date, sortOrder: SortOrder.ascending).sortDescriptor)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}
+
+enum SortType: String, CaseIterable {
+    case date
+    case amount
+}
+
+enum SortOrder: String, CaseIterable {
+    case ascending
+    case descending
+}
+
+extension SortType: Identifiable {
+    var id: String { rawValue }
+}
+
+extension SortOrder: Identifiable {
+    var id: String { rawValue }
+}
+
+
+struct TransactionsSort {
+    var sortType: SortType
+    var sortOrder: SortOrder
+
+    var isAscending: Bool {
+        sortOrder == .ascending ? true : false
+    }
+
+    var sortDescriptor: NSSortDescriptor {
+        switch sortType {
+        case .date:
+            return NSSortDescriptor(keyPath: \Transactions.date, ascending: isAscending)
+        case .amount:
+            return NSSortDescriptor(keyPath: \Transactions.amount, ascending: isAscending)
+        }
     }
 }

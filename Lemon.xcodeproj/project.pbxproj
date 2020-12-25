@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793D0745254F398A00A7A8EF /* TransactionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D0744254F398A00A7A8EF /* TransactionsList.swift */; };
+		796AE295255062E70071A746 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AE294255062E70071A746 /* Wallet.swift */; };
 		79AF238B253C78DC00784F6F /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF2389253C78DC00784F6F /* Transactions+CoreDataClass.swift */; };
 		79AF238C253C78DC00784F6F /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AF238A253C78DC00784F6F /* Transactions+CoreDataProperties.swift */; };
 		79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6368D252DD82C00AA85EE /* LemonApp.swift */; };
@@ -21,7 +23,6 @@
 		79FBE48B253B82B100BE5059 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE485253B82B100BE5059 /* TransactionRow.swift */; };
 		79FBE48C253B82B100BE5059 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE486253B82B100BE5059 /* CardView.swift */; };
 		79FBE48D253B82B100BE5059 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE487253B82B100BE5059 /* Header.swift */; };
-		79FBE48E253B82B100BE5059 /* TransactionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE488253B82B100BE5059 /* TransactionsList.swift */; };
 		79FBE48F253B82B100BE5059 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE489253B82B100BE5059 /* Home.swift */; };
 		79FBE49A253B82DE00BE5059 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE494253B82DE00BE5059 /* Card+CoreDataClass.swift */; };
 		79FBE49E253B82DE00BE5059 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FBE499253B82DE00BE5059 /* Card+CoreDataProperties.swift */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		793D0744254F398A00A7A8EF /* TransactionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsList.swift; sourceTree = "<group>"; };
+		796AE294255062E70071A746 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		79AF2389253C78DC00784F6F /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
 		79AF238A253C78DC00784F6F /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		79C6368A252DD82C00AA85EE /* Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +68,6 @@
 		79FBE485253B82B100BE5059 /* TransactionRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		79FBE486253B82B100BE5059 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		79FBE487253B82B100BE5059 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		79FBE488253B82B100BE5059 /* TransactionsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsList.swift; sourceTree = "<group>"; };
 		79FBE489253B82B100BE5059 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		79FBE494253B82DE00BE5059 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		79FBE499253B82DE00BE5059 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -104,7 +106,8 @@
 				79FBE487253B82B100BE5059 /* Header.swift */,
 				79FBE489253B82B100BE5059 /* Home.swift */,
 				79FBE485253B82B100BE5059 /* TransactionRow.swift */,
-				79FBE488253B82B100BE5059 /* TransactionsList.swift */,
+				793D0744254F398A00A7A8EF /* TransactionsList.swift */,
+				796AE294255062E70071A746 /* Wallet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,9 +325,10 @@
 				79FBE48F253B82B100BE5059 /* Home.swift in Sources */,
 				79C6368E252DD82C00AA85EE /* LemonApp.swift in Sources */,
 				79FBE48C253B82B100BE5059 /* CardView.swift in Sources */,
-				79FBE48E253B82B100BE5059 /* TransactionsList.swift in Sources */,
 				79AF238C253C78DC00784F6F /* Transactions+CoreDataProperties.swift in Sources */,
+				796AE295255062E70071A746 /* Wallet.swift in Sources */,
 				79FBE48A253B82B100BE5059 /* CardsPager.swift in Sources */,
+				793D0745254F398A00A7A8EF /* TransactionsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
