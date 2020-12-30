@@ -21,6 +21,10 @@ struct Wallet: View {
     
     @State private var navBarDisplayMode = ""
     
+    @State var showOptions = false
+    
+    @State var types: [TransactionType] = TransactionType.allCases
+    
     @FetchRequest(
         entity: Card.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Card.id, ascending: true)],
@@ -72,7 +76,7 @@ struct Wallet: View {
                             }
                             .animation(.easeInOut)
                         
-                        TransactionsList(predicate: Transactions.predicate(cardID: cardPicked?.id, with: [], searchText: ""), sortDescriptor: TransactionsSort(sortType: SortType.date, sortOrder: SortOrder.ascending).sortDescriptor)
+                        TransactionsList(predicate: Transactions.predicate(cardID: cardPicked?.id, of: types))
                     }
                 }
                 // TODO: change toolbar when card is picked
@@ -142,7 +146,23 @@ struct Wallet: View {
             .animation(.easeInOut)
         }
         .background(Color(UIColor.systemGray6).edgesIgnoringSafeArea(.all))
-//        .navigationBarTitle("Wallet")
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                if cardPicked != nil {
+                    Button(action: { showOptions.toggle() }) {
+                        Text("Filter")
+                    }
+                    .sheet(isPresented: $showOptions) {
+                        TransactionsListOptions(types: $types)
+                    }
+                }
+            }
+        }
+        .navigationBarTitle(
+            Text("\(cardPicked?.bank ?? "Wallet") \(cardPicked?.type ?? "")"),
+            displayMode: .large
+        )
+//        .navigationBarHidden(cardPicked == nil)
     }
 }
 

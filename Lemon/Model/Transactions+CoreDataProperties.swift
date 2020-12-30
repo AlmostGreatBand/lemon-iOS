@@ -34,25 +34,18 @@ extension Transactions {
 }
 
 extension Transactions : Identifiable {
-    static func predicate(cardID: Int64?, with types: [TransactionType], searchText: String) -> NSPredicate? {
+    static func predicate(cardID: Int64?, of types: [TransactionType]) -> NSPredicate? {
         var predicates = [NSPredicate]()
 
         if let id = cardID {
             predicates.append(NSPredicate(format: "cardID == %@", String(id)))
         }
         
-        // 2
         if !types.isEmpty {
             let typesString = types.map { $0.rawValue }
             predicates.append(NSPredicate(format: "type IN %@", typesString))
         }
 
-        // 3
-        if !searchText.isEmpty {
-            predicates.append(NSPredicate(format: "name CONTAINS[cd] %@", searchText.lowercased()))
-        }
-
-        // 4
         if predicates.isEmpty {
             return nil
         } else {

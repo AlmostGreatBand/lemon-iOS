@@ -9,25 +9,25 @@ import SwiftUI
 import CoreData
 
 struct TransactionsList: View {
-
+    
     @Environment(\.managedObjectContext) private var context
     @Environment(\.colorScheme) var colorScheme
 
     @FetchRequest(
         entity: Transactions.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Transactions.date, ascending: false)
-        ]
+        sortDescriptors: []
     )
     private var result: FetchedResults<Transactions>
 
-    init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor) {
+    init(predicate: NSPredicate?) {
         let fetchRequest = NSFetchRequest<Transactions>(entityName: Transactions.entity().name ?? "Transactions")
-        fetchRequest.sortDescriptors = [sortDescriptor]
 
         if let predicate = predicate {
             fetchRequest.predicate = predicate
         }
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Transactions.date, ascending: true)]
+        
         _result = FetchRequest(fetchRequest: fetchRequest)
     }
     
@@ -58,7 +58,7 @@ struct TransactionsList: View {
             Text("Empty")
         } else {
             VStack(alignment: .leading) {
-
+                
                 ForEach(getDates(), id: \.self) { date in
                     HStack(spacing: 5) {
                         Text("\(date.day!)")
@@ -95,46 +95,19 @@ struct TransactionsList: View {
     }
 }
 
+extension Date {
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
+}
+
 struct TestPredicate_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionsList(predicate: Transactions.predicate(cardID: nil, with: [], searchText: ""), sortDescriptor: TransactionsSort(sortType: SortType.date, sortOrder: SortOrder.ascending).sortDescriptor)
+        TransactionsList(predicate: Transactions.predicate(cardID: nil, of: []))
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
-enum SortType: String, CaseIterable {
-    case date
-    case amount
-}
-
-enum SortOrder: String, CaseIterable {
-    case ascending
-    case descending
-}
-
-extension SortType: Identifiable {
-    var id: String { rawValue }
-}
-
-extension SortOrder: Identifiable {
-    var id: String { rawValue }
-}
-
-
-struct TransactionsSort {
-    var sortType: SortType
-    var sortOrder: SortOrder
-
-    var isAscending: Bool {
-        sortOrder == .ascending ? true : false
-    }
-
-    var sortDescriptor: NSSortDescriptor {
-        switch sortType {
-        case .date:
-            return NSSortDescriptor(keyPath: \Transactions.date, ascending: isAscending)
-        case .amount:
-            return NSSortDescriptor(keyPath: \Transactions.amount, ascending: isAscending)
-        }
     }
 }
