@@ -27,7 +27,6 @@ struct CardView: View {
         
         let startColor = Color(UIColor(named: "\(colorName)Start")!)
         let endColor = Color(UIColor(named: "\(colorName)End")!)
-//        let shadowColor = Color(UIColor(named: "\(colorName)Shadow")!)
         
         ZStack {
             
@@ -37,7 +36,6 @@ struct CardView: View {
                     .fill(Color.white.opacity(1))
                     .aspectRatio(aspectRatio, contentMode: .fit)
                     .padding(30)
-//                    .shadow(color: shadowColor, radius: 20, y: 15)
             }
             
             GeometryReader{ geometry in

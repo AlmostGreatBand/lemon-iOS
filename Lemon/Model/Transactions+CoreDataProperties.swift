@@ -33,6 +33,7 @@ extension Transactions {
     }
 }
 
+// Extension for predication of core data fetch
 extension Transactions : Identifiable {
     static func predicate(cardID: Int64?, of types: [TransactionType]) -> NSPredicate? {
         var predicates = [NSPredicate]()
@@ -54,6 +55,7 @@ extension Transactions : Identifiable {
     }
 }
 
+// May change later
 enum TransactionType: String, CaseIterable {
     case donation = "Donation",
          entertainment = "Entertainment",

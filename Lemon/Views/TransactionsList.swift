@@ -10,9 +10,12 @@ import CoreData
 
 struct TransactionsList: View {
     
+    // Core Data context
     @Environment(\.managedObjectContext) private var context
+    // Light or dark theme
     @Environment(\.colorScheme) var colorScheme
 
+    // Fetch request for transactions
     @FetchRequest(
         entity: Transactions.entity(),
         sortDescriptors: []
@@ -31,6 +34,7 @@ struct TransactionsList: View {
         _result = FetchRequest(fetchRequest: fetchRequest)
     }
     
+    // Check all transactions and return dates in which transactions occured
     func getDates() -> [DateComponents] {
         var dates = [DateComponents]()
         result.forEach { transaction in
@@ -46,6 +50,7 @@ struct TransactionsList: View {
         }
     }
     
+    // Get only transactions that occured on current date
     func getTransactionsByDate(date: DateComponents) -> [Transactions] {
         return result.filter { transaction in
             let components = transaction.date.get(.day, .month, .year)

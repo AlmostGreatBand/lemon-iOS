@@ -9,28 +9,34 @@ import SwiftUI
 
 struct Wallet: View {
     
+    // Core Data context
     @Environment(\.managedObjectContext) private var viewContext
     
+    // Currently picked card
     @State private var cardPicked: Card?
     
+    // Manage which view to show at the moment
     @State private var isTransactionsVisible = false
     @State private var isCardInvisible = false
 
+    // Variables to store cards positions
     @State private var currentPosition: CGSize = .zero
     @State private var newPosition: CGSize = .zero
     
-    @State private var navBarDisplayMode = ""
-    
+    // Is filter options view shown
     @State var showOptions = false
     
+    // Transaction types to show
     @State var types: [TransactionType] = TransactionType.allCases
     
+    // Core Data request for all cards
     @FetchRequest(
         entity: Card.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Card.id, ascending: true)],
         animation: .default
     ) var cards: FetchedResults<Card>
     
+    // Get card's offset on screen
     func getOffset(indexOfCard: Int, size: CGSize) -> CGFloat {
         
         let height = size.height
@@ -60,9 +66,11 @@ struct Wallet: View {
     var body: some View {
         GeometryReader { geometry in
             
+            // If card is picked, animate cards dissapearing and show transactions list of current card
             if self.cardPicked != nil {
                 ScrollView {
                     VStack {
+                        // Picked card on top
                         CardView(card: cardPicked!)
                             .frame(height: geometry.size.width / 1.6)
                             .offset(y: getOffset(indexOfCard: cards.firstIndex(of: cardPicked!)!, size: geometry.size))
@@ -76,10 +84,10 @@ struct Wallet: View {
                             }
                             .animation(.easeInOut)
                         
+                        // Transactions
                         TransactionsList(predicate: Transactions.predicate(cardID: cardPicked?.id, of: types))
                     }
                 }
-                // TODO: change toolbar when card is picked
                 .opacity(isTransactionsVisible ? 1 : 0)
                 .onAppear {
                     withAnimation {
@@ -91,6 +99,7 @@ struct Wallet: View {
                 }
             }
             
+            // Cards
             ZStack {
                 ForEach(cards) { card in
                     let indexOfCard = cards.firstIndex(of: card) ?? 0
@@ -147,6 +156,7 @@ struct Wallet: View {
         }
         .background(Color(UIColor.systemGray6).edgesIgnoringSafeArea(.all))
         .toolbar {
+            // Button to show filter options
             ToolbarItem(placement: .primaryAction) {
                 if cardPicked != nil {
                     Button(action: { showOptions.toggle() }) {
@@ -162,7 +172,6 @@ struct Wallet: View {
             Text("\(cardPicked?.bank ?? "Wallet") \(cardPicked?.type ?? "")"),
             displayMode: .large
         )
-//        .navigationBarHidden(cardPicked == nil)
     }
 }
 
